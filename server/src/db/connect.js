@@ -2,7 +2,7 @@ import fs from "fs/promises";
 
 export async function readJson() {
     try {
-        const data = await fs.readFile("src/db/data.json", "utf-8");
+        const data = await fs.readFile("src/db/terrorData.json", "utf-8");
         return JSON.parse(data)
     } catch (error) {
         console.error(error.message)
@@ -14,7 +14,7 @@ export async function addToJson(data) {
     try {
         const file = await readJson();
         file.push(data);
-        await fs.writeFile("src/db/data.json", JSON.stringify(file));
+        await fs.writeFile("src/db/terrorData.json", JSON.stringify(file));
     } catch (error) {
         console.error(error.message)
         throw error.message
