@@ -1,1 +1,0 @@
-export function fileC(req, res) { };
